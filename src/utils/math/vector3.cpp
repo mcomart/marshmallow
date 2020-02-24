@@ -38,19 +38,19 @@ Vector3 Vector3::MultiplyWithScalar(const float scalar, const Vector3 a)
 	return result;
 }
 
+float Vector3::Magnitude(const Vector3 a)
+{
+	float result;
+	result = sqrt(a.x*a.x + a.y*a.y + a.z*a.z);
+	return result;
+}
+
 Vector3 Vector3::Normalize(const Vector3 a)
 {
 	Vector3 result;
 	result.x = a.x / Magnitude(a);
 	result.y = a.y / Magnitude(a);
 	result.z = a.z / Magnitude(a);
-	return result;
-}
-
-float Vector3::Magnitude(const Vector3 a)
-{
-	float result;
-	result = sqrt(a.x*a.x + a.y*a.y + a.z*a.z);
 	return result;
 }
 

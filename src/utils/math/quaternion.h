@@ -11,10 +11,10 @@ namespace MarshMath {
         float s;
     public:
         inline Quaternion()
-            : ijk(0.0f, 0.0f, 0.0f), s(0.0f){};
-        inline Quaternion(const Vector3 a, const float cs) 
-            : ijk(a), s(cs){};
-        inline ~Quaternion(){};
+            : ijk(0.0f, 0.0f, 0.0f), s(0.0f) {};
+        inline Quaternion(const Vector3 va, const float cs) 
+            : ijk(va), s(cs) {};
+        inline ~Quaternion() {};
     };
 }
 #endif

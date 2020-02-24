@@ -11,17 +11,17 @@ namespace MarshMath {
         float z;
     public:
         inline Vector3()
-            : x(0.0f), y(0.0f), z(0.0f){};
+            : x(0.0f), y(0.0f), z(0.0f ){};
         inline Vector3(const float cx, const float cy, const float cz) 
-            : x(cx), y(cy), z(cz){};
-        inline ~Vector3(){};
+            : x(cx), y(cy), z(cz) {};
+        inline ~Vector3() {};
 
         Vector3 Add(const Vector3 a, const Vector3 b);
         Vector3 Substract(const Vector3 a, const Vector3 b);
         Vector3 Multiply(const Vector3 a, const Vector3 b);
         Vector3 MultiplyWithScalar(const float scalar, const Vector3 a);
-        Vector3 Normalize(const Vector3 a);
         float Magnitude(const Vector3 a);
+        Vector3 Normalize(const Vector3 a);
         Vector3 CrossProduct(const Vector3 a, const Vector3 b);
         float DotProduct(const Vector3 a, const Vector3 b);
     };
