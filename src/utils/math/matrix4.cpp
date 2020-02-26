@@ -30,8 +30,7 @@ Matrix4 MarshMath::Matrix4::Transpose() {
 }
 
 Matrix4 MarshMath::Matrix4::InverseOrthogonalMatrix(Matrix3 ma, Vector3 va) {
-    //La matriz "A" es invertible siempre y cuando su determinante no sea 0
-	//Entonces: A^(-1) = A^(T)b - A^(T)t (sii A ortogonal)
+	// A^(-1) = A^(T)b - A^(T)t (sii A ortogonal y su determinante no es 0)
 
 	Matrix4 result;
 
