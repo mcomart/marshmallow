@@ -1,4 +1,4 @@
-#include "matrix3.h"
+#include "../include/matrix3.h"
 
 using namespace MarshMath;
 

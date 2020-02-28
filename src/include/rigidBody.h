@@ -2,8 +2,9 @@
 #define RIGIDBODY_H
 
 #include "../utils/math/marshmath.h"
+#include "../entities/entity.h"
 
-class RigidBody {
+class RigidBody : public Entity {
 public:
     /* Constant quantities */
     double mass;
@@ -24,5 +25,8 @@ public:
     /* Computed quantities */
     Vector3 force;
     Vector3 torque;
+public:
+    void Simulate();
+    void Render();
 };
 #endif
