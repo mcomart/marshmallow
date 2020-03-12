@@ -1,0 +1,63 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compiler",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-c",
+                "src/main.cpp",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Linker",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                //"-v",
+                //"main.o",
+                "src/main.cpp",
+                "src/*/*.cpp",
+                "src/utils/math/*.cpp",
+                "-o",
+                "build/marshmallow.exe",
+                "-Iinclude/marshmallow",
+                "-Isrc/include",
+                "-Isrc/utils/math/include",
+                //"-Llibs/glew/static",
+                //"-lglew32s",
+                "libs/GL/glew/static/glew32.lib",
+                "-Llibs/GL/GLFW/static",
+                "-lglfw3",
+                "-lopengl32",
+                "-lgdi32",
+                "-luser32",
+                "-lkernel32"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Marshmallow Simulator Builder",
+            "dependsOn": [
+                //"Compiler",
+                "Linker"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

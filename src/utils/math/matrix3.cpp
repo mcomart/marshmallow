@@ -1,37 +1,32 @@
 #include "../include/matrix3.h"
 
-using namespace MarshMath;
+namespace MarshMath {
+	Matrix3 Matrix3::Transpose()
+	{
+		Matrix3 result;
 
-Matrix3 Matrix3::Transpose()
-{
-	Matrix3 result;
+		result.ax.x = ax.x;
+		result.ax.y = ay.x;
+		result.ax.z = az.x;
 
-	result.ax.x = ax.x;
-	result.ax.y = ay.x;
-	result.ax.z = az.x;
+		result.ay.x = ax.y;
+		result.ay.y = ay.y;
+		result.ay.z = az.y;
 
-	result.ay.x = ax.y;
-	result.ay.y = ay.y;
-	result.ay.z = az.y;
+		result.az.x = ax.z;
+		result.az.y = ay.z;
+		result.az.z = az.z;
 
-	result.az.x = ax.z;
-	result.az.y = ay.z;
-	result.az.z = az.z;
+		return result;
+	}
 
-	return result;
-}
+	Matrix3 Matrix3::GetIdentityMatrix() {
+		Matrix3 identity;
 
-Vector3 Matrix3::Transform(Matrix3 ma, Vector3 va)
-{
-	//result = ma*va
+		identity.ax.x = 1.0f;
+		identity.ay.y = 1.0f;
+		identity.az.z = 1.0f;
 
-	Matrix3 trans = ma.Transpose();
-
-	Vector3 result;
-
-	result.x = trans.ax.x*va.x + trans.ax.y*va.y + trans.ax.z*va.z;
-	result.y = trans.ay.x*va.x + trans.ay.y*va.y + trans.ay.z*va.z;
-	result.z = trans.ay.x*va.x + trans.ay.y*va.y + trans.ay.z*va.z;
-
-	return result;
+		return identity;
+	}
 }

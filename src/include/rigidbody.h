@@ -1,8 +1,7 @@
 #ifndef RIGIDBODY_H
 #define RIGIDBODY_H
 
-#include "../utils/math/marshmath.h"
-#include "../entities/entity.h"
+#include "../include/entity.h"
 
 class RigidBody : public Entity {
 public:

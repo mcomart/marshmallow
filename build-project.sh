@@ -4,7 +4,7 @@ OUTPUT_DIR="build"
 
 function check_execution() {
     if [[ $1 -ne 0 ]]; then
-        echo "[MSH] - Built Failed."
+        echo "[MSH] - Built failed."
         exit 1
     fi
 }
@@ -43,4 +43,4 @@ check_execution $1
 generate_makefiles
 check_execution $1
 
-echo "[MSH] - Built successful. Executable in '$OUTPUT_DIR'."
+echo "[MSH] - Done. Check console for details. Makefile in '$OUTPUT_DIR'."

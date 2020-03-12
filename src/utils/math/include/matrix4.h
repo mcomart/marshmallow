@@ -15,7 +15,7 @@ namespace MarshMath {
                 m[i] = 0.0f;
             }
         }
-        inline Matrix4(const Vector3 vx, const Vector3 vy, const Vector3 vz) {
+        inline Matrix4(const Vector3 vx, const Vector3 vy, const Vector3 vz, const Vector3 t) {
             // vector x
             m[0] = vx.x;
             m[4] = vx.y;
@@ -35,15 +35,16 @@ namespace MarshMath {
             m[14] = 0.0f;
 
             // last column
-            m[3] = 0.0f;
-            m[7] = 0.0f;
-            m[11] = 0.0f;
+            m[3] = t.x;
+            m[7] = t.y;
+            m[11] = t.z;
             m[15] = 1.0f;
         };
         inline ~Matrix4(){};
 
         static Matrix4 InverseOrthogonalMatrix(Matrix3 ma, Vector3 va);
 
+        // float* GetArray() { return &m[0]; };
         Matrix4 Transpose();
     };
 }

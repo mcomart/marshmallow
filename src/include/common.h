@@ -3,11 +3,13 @@
 
 //#define GLEW_STATIC
 
-#include "../../libs/glew/glew.h"
-#include "../../libs/GLFW/glfw3.h"
+#include "../../libs/GL/include/glew.h"
+#include "../../libs/GL/include/glfw3.h"
 #include "../utils/math/include/marshmath.h"
 
 #include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
 

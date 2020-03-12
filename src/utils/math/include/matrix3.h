@@ -20,8 +20,8 @@ namespace MarshMath {
         };
         inline ~Matrix3() {};
 
-        static Vector3 Transform(Matrix3 ma, Vector3 va);
-
+        static Matrix3 GetIdentityMatrix();
+        
         Matrix3 Transpose();
     };
 }

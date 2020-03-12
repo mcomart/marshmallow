@@ -14,12 +14,6 @@ bool Screen::Init(const string& title, bool fullscreen) {
         return false;
     }
 
-    glewInit();
-    //GLenum err = glewInit();
-    /*if (GLEW_OK != err) {
-        return false;
-    }*/
-
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 	glfwWindowHint(GLFW_SAMPLES, 8);
 
@@ -33,6 +27,13 @@ bool Screen::Init(const string& title, bool fullscreen) {
     }
 
     glfwMakeContextCurrent(screenWindow);
+
+    glewInit();
+    //GLenum err = glewInit();
+    /*if (GLEW_OK != err) {
+        return false;
+    }*/
+
     return true;
 }
 
@@ -43,6 +44,8 @@ bool Screen::KeyPressed(int key) const {
 void Screen::Refresh() {
     glfwSwapBuffers(screenWindow);
 	glfwPollEvents();
+    lastElapsedTime = glfwGetTime();
+    elapsedTime = glfwGetTime() - lastElapsedTime;
 }
 
 bool Screen::ShouldClose() const {

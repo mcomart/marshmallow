@@ -14,10 +14,16 @@ public:
 	void Refresh();
 	int GetWidth() const { return screenWidth; }
 	int GetHeight() const { return screenHeight; }
+
+    // Temporizador
+	float ElapsedTime() const { return elapsedTime; }
 private:
     GLFWwindow* screenWindow;
     int screenWidth;
     int screenHeight;
+
+    float elapsedTime;
+    float lastElapsedTime;
 
     void Close();
     int GetDesktopWidth() const;

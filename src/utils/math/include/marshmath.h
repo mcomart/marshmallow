@@ -6,6 +6,7 @@
 #include "matrix3.h"
 #include "matrix4.h"
 #include "quaternion.h"
+#include "mathoperations.h"
 
 using namespace MarshMath;
 
