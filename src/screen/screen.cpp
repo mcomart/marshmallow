@@ -10,7 +10,7 @@ int Screen::GetDesktopHeight() const {
 
 bool Screen::Init(const string& title, bool fullscreen) {
     if (!glfwInit()) {
-        // TODO: log
+        // TODO: log!!
         return false;
     }
 

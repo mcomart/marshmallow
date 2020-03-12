@@ -17,10 +17,10 @@ void Renderer::ClearDepthBuffer() {
 void Renderer::SetMatrices(const MarshMath::Matrix4& model, const MarshMath::Matrix4& view, const MarshMath::Matrix4& projection) {
 	glMatrixMode(GL_PROJECTION);
 	//Cargar los datos de la matriz proyección
-	//glLoadMatrixf(projection.m);
+	glLoadMatrixf(projection.m);
 	glMatrixMode(GL_MODELVIEW);
 	//Cargar los datos de vista*modelo
-	//glLoadMatrixf(Multiply(view, model).m);
+	glLoadMatrixf(Multiply(view, model).m);
 }
 
 unsigned int Renderer::CreateBuffer() {
@@ -52,7 +52,7 @@ void Renderer::SetIndexBufferData(const void *data, unsigned int dataSize) {
 }
 
 void Renderer::DrawBuffer(unsigned int numIndices, int coordsOffset, int colorsOffset, unsigned int stride) {
-	//glVertexPointer(2, GL_FLOAT, stride, (const void*)coordsOffset);
-	//glColorPointer(3, GL_FLOAT, stride, (const void*)colorsOffset);
+	glVertexPointer(2, GL_FLOAT, stride, (const void*)coordsOffset);
+	glColorPointer(3, GL_FLOAT, stride, (const void*)colorsOffset);
 	glDrawElements(GL_TRIANGLES, numIndices, GL_UNSIGNED_SHORT, NULL);
 }

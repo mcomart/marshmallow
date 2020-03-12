@@ -15,27 +15,15 @@ Vector3 Camera::GetUpVector() {
 }
 
 void Camera::SetFrustum(double near, double far) {
-	cout << "Frustum: ";
-    // float near = 0.1f;
-    // float far = 100.0f;
-
     double scale = tan(aperture * 0.5 * PI / 180) * near;
     double aspect = screenwidth / screenheight;
-	cout << "Scale: " << to_string(scale);
-	cout << "Aspect: " << to_string(aspect);
 
     frustum.near = near;
-	cout << "Near: " << to_string(near);
     frustum.far = far;
-	cout << "Far: " << to_string(far);
     frustum.right = aspect * scale;
-	cout << "Right: " << to_string(frustum.right);
     frustum.left = -frustum.right;
-	cout << "Left: " << to_string(frustum.left);
     frustum.top = scale;
-	cout << "Top: " << to_string(frustum.top);
     frustum.bottom = -frustum.top;
-	cout << "Bottom: " << to_string(frustum.bottom);
 }
 
 Matrix4 Camera::GetLookAt(Vector3 target) {
